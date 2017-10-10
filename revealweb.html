@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Presentación Reveal.js para Web</title>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="tema">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/src-noconflict/ace.js"></script>
+		<script src="js/revealeditor.js"></script>
+		<script id="serv"></script>
+	</head>
+	<body>
+		<a class="malditoRE"></a>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h1>Reveal.js</h1>
+						<p>Un framework para presentaciones usando Javascript y CSS</p>
+						<p>Por: André Michel Pozos</p>
+					</section>
+					<section id="cambio">
+						<a id="empezar">Empezar presentación</a><br>
+						<img src="imagenes/soraya.gif" id="sora" alt="Maldita lisiada" style="visibility: hidden;"/>
+					</section>
+					<section id="fragments">
+						<h2>Porque Javascript ❤️</h2>
+						<p class="fragment fade-up">Temas</p>
+						<p class="fragment fade-up">Transiciones</p>
+						<p class="fragment fade-up">Animaciones</p>
+						<p class="fragment fade-up">Efecto de paralaje <em>(Parallax)</em></p>
+					</section>
+				</section>
+				<section>
+					<h2>Otras cosas mas que soporta Reveal.js:</h2>
+					<ul>
+						<li>Fondos personalizados</li>
+						<li>Resaltado de código fuente</li>
+						<li>Markdown</li>
+						<li>Y (muchos) Complementos</li>
+					</ul>
+					😍
+				</section>
+				<section>
+					<section data-background-video="imagenes/rie.mp4">
+						<p>Fondos con imagenes o videos 😱</p>
+					</section>
+					<section>
+						<p>Código fuente</p>
+						<pre><code class="hljs">
+//Triple igual JavaScript
+var numero = 5;
+var caracter = '5';
+if(numero == caracter)
+    console.log("Hola");
+if(numero === caracter)
+    console.log("¿Cómo estas?");
+else
+    console.log("El triple igual es diferente");
+
+//Clases ECMAScript 6
+class Coche{
+	constructor(modelo,año){
+		this.modelo = modelo;
+		this.año = año;
+	}
+	avanzar(){
+		console.log("Estoy avanzando");
+	}
+}
+var coche = new Coche("Tesla Modelo S",2014);
+coche.avanzar();
+console.log(coche.modelo);
+
+//Parametros por valor y por referencia
+function Coche() {
+	this.año = arguments[0];
+	this.marca = arguments[1];
+	this.modelo = arguments[2];
+}
+function ejecutar() {
+	var variable = 23;
+	var carrito = new Coche(1996,"Dodge","Viper R/T");
+	console.log("Valor de hue antes de la función: "+variable);
+	console.log("Valor de Coche.año antes de la función: "+carrito.año);
+	modificar(variable,carrito);
+	console.log("Valor de hue después de la función: "+variable);
+	console.log("Valor de Coche.año después de la función: "+carrito.año);
+}
+function modificar(hue,objeto) {
+	hue = 24;
+	objeto.año = 1997;
+}
+ejecutar();
+						</code></pre>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							#Encabezado con Markdown.
+							Puedo poner [enlaces](https://andreandyp,github.io/) con Markdown.  
+							~~~
+								console.log("O código fuente con Markdown");
+							~~~  
+							1.Poniendo  
+							2.Listas  
+							3.Con Markdown
+							>Citando con Markdown.  
+						</script>
+					</section>
+					<section>
+						<p>Complementos: RevealEditor.js</p>
+						<a href="#" id="complemento">Abrir editor</a>
+					</section>
+				</section>
+				<section>
+					<h1>Incluye atajos de teclado:</h1>
+					<ul>
+						<li>f: pantalla completa (Full-screen)</li>
+						<li>s: modo de presentador (Speaker mode)</li>
+						<li>o: Ver todas las diapositivas (Overview)</li>
+						<li>b: pausar presentación (Black screen)</li>
+					</ul>
+					<p>Por supuesto, totalmente personalizables con JavaScript 😊</p>
+				</section>
+				<section>
+					<h2>¿Cómo usar Reveal.js? 🤔</h2>
+					<table>
+						<tr>
+							<td>Editando el código fuente</td>
+							<td>Usando el editor oficial</td>
+						</tr>
+						<tr>
+							<td>Descargar desde Github (opcional: instalar dependiencias con NPM)</td>
+							<td>Entrando a <a href="https://slides.com/">Slides.com</a></td>
+						</tr>
+					</table>
+					<strong><p class="fragment current-visible">En este caso, demostraré la primera opción 😆</p></strong>
+				</section>
+				<section>
+					<section>
+						<h2>Sin NPM 😢</h2>
+						<p>(Pero con Github 😁)</p>
+						<img src="imagenes/github.png" width="480" height="480" alt="Logo Github"/>
+					</section>
+					<section>
+						<h2>En 4 pasos:</h2>
+						<ol>
+							<li>Descargar desde Github</li>
+							<ul>
+								<li>Repositorio de Reveal.js (Releases)</li>
+								<li><a href="https://github.com/hakimel/reveal.js/releases">https://github.com/hakimel/reveal.js/releases</a></li>
+								<li>Source Code (zip)</li>
+							</ul>
+							<li>Descomprimir</li>
+							<li>Usa tu editor favorito</li>
+							<ul>
+								<li>Visual Studio Code</li>
+								<li>Sublime Text</li>
+								<li>Brackets</li>
+							</ul>
+							<li>¡A programar!</li>
+					</section>
+					<section>
+						<img src="imagenes/npms1.png" alt="Sin NPM 1"/>
+					</section>
+					<section>
+						<img src="imagenes/npms2.png" alt="Sin NPM 2"/>
+					</section>
+					<section>
+						<img src="imagenes/npms3.png" alt="Sin NPM 3"/>
+					</section>
+					<section>
+						<img src="imagenes/npms4.png" alt="Sin NPM 4"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Con NPM 🤗</h2>
+						<img src="imagenes/npm.svg" alt="Logo NPM"/>
+					</section>
+					<section>
+						<h2>En 5 pasos:</h2>
+						<ol>
+							<li>Instala Git</li>
+							<li>Instala Node.js</li>
+							<li>Ejecuta en este orden (Git)</li>
+							<ul>
+								<li><code class="hljs">git clone https://github.com/hakimel/reveal.js.git</code></li>
+								<li><code class="hljs">cd reveal.js</code></li>
+							</ul>
+							<li>Ejecuta en este orden (NPM)</li>
+							<ul>
+								<li><code class="hljs">npm install</code></li>
+								<li><code class="hljs">npm start</code></li>
+							</ul>								
+							<li>¡A programar!</li>
+					</section>
+					<section>
+						<img src="imagenes/npmc1.png" alt="Con NPM 1"/>
+					</section>
+					<section>
+						<img src="imagenes/npmc2.png" alt="Con NPM 2"/>
+					</section>
+					<section>
+						<img src="imagenes/npmc3.png" alt="Con NPM 3"/>
+					</section>
+					<section>
+						<img src="imagenes/npmc4.png" alt="Con NPM 4"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Uso de Reveal.js 😮</h2>
+						<p>¡Para que empiecen a la de ya e impresionen a todos en TT!</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						Una diapositiva:
+						~~~
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<p>Diapositiva 1</p>
+		</section>
+		<section>
+			<p>Diapositivas 2</p>
+		</section>
+	</div>
+</div>
+~~~
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						Diapositivas anidadas:
+						~~~
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<section>
+				<p>Diapositiva principal</p>
+			</section>
+			<section>
+				<p>Diapositiva de abajo</p>
+			</section>
+			<section>
+				<p>Diapositiva de más abajo</p>
+			</section>
+		</section>
+	</div>
+</div>
+~~~
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							Temas:
+							~~~
+<link rel="stylesheet" href="css/theme/black.css">
+							~~~
+							Configuración
+							~~~
+Reveal.configure({
+	transition: "slide",
+	parallaxBackgroundImage: '',
+	parallaxBackgroundSize: ''
+});
+							~~~
+							Fondo de video
+							~~~
+<section data-background-video="imagenes/rie.mp4"></section>
+							~~~
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							Código fuente
+							~~~
+<pre><code class="hljs">alert("Hola");</code></pre>
+							~~~
+							Markdown
+							~~~
+<section data-markdown>
+	<script type="text/template"/>
+</section>
+							~~~
+							Animaciones:
+							~~~
+<section>
+	<p class="fragment fade-up">Este texto aparece
+		y se desplaza hacia arriba</p>
+</section>
+							~~~
+						</script>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Demostración</h2>
+					</section>
+					<section>
+						<h2>Tema y transición aleatorios con un servlet 👎🏽</h2>
+						<a id="tServlet">Cambiar tema</a>
+					</section>
+					<section>
+						<h2>Tema y transición aleatorios con Javascript 👍🏽</h2>
+						<a id="tJS">Cambiar tema</a>
+					</section>
+					<section>
+						<a id="restaurar">Restaurar tema</a>
+						<p class="fragment grow">JavaScript 👍🏽</p>
+						<p class="fragment shrink">Java para Web 👎🏽</p>
+						<p class="fragment fade-down">(En mi opinión)</p>
+					</section>
+				</section>
+				<section>
+					Referencias:<br>
+					<ol>
+						<li><a href="https://github.com/hakimel/reveal.js">Repositorio de Reveal.js</a></li>
+						<li><a href="https://jquery.com/">jQuery</a></li>
+						<li><a href="https://giphy.com/gifs/jIRPOnUASNsQw">GIF de Soraya Montenegro</a></li>
+						<li><a href="https://pixabay.com/es/helecho-verde-bosque-helecho-hoja-1715135/"/>Imagen de fondo</a></li>
+						<li><a href="http://getemoji.com/">Emoticones</a></li>
+						<li><a href="https://www.youtube.com/watch?v=-roejW4j53Q">Video de fondo</a></li>
+						<li><a href="https://github.com/ctangel/RevealEditor">Complemento RevealEditor.js</a></li>
+						<li><a href="https://github.com/">Github</a></li>
+						<li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+						<li><a href="https://www.npmjs.com/">Node Packet Manager (NPM)</a></li>
+						<li><a href="https://git-scm.com/">Git</a></li>
+						<li><a href="http://www.oracle.com/technetwork/java/index-jsp-135475.html">Cosas de servlets</a></li>
+					</ol>
+				</section>
+				<section>
+					<p>Por cierto...</p>
+					<p class="fragment grow">Disponible también para celulares. 😃</p>	
+					<a href="https://andreandyp.github.io/aplicaciones/revealweb/presentacion.html" class="fragment fade-up">https://andreandyp.github.io/
+					aplicaciones/revealweb/presentacion.html</a>
+					<p class="fragment grow">O por si no me crees 😒</p>
+					<a href="https://github.com/andreandyp/andreandyp.github.io" class="fragment fade-up">https://github.com/andreandyp/andreandyp.github.io</a>
+				</section>
+				<section>
+					Gracias por su atención 😜<br>
+					André Michel Pozos<br>
+					<a href="https://twitter.com/andreandyp">@AndreAndyP</a> | <a href="https://andreandyp.github.io">https://andreandyp.github.io</a>
+					<br><a id="terminar">Terminar presentación</a> 
+				</section>
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/presentacion.js"></script>
+
+		<script>
+			Reveal.initialize({
+				history: false,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Máquinas de Turing NO deteerministas</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h2>Máquinas de Turing NO deterministas</h2>
+						<ul>
+							<li>Gisela Piña Escudero 😎</li>
+							<li>André Michel Pozos Nieto 😎</li>
+						</ul>
+					</section>
+					<section>
+						Formalmente, una máquina de Turing <em>NO</em> determinista es una séptupla 
+						NDTM=(Q, Σ, Γ, δ, q<sub>0</sub> , &beta;, F) donde:
+						<ul>
+							<li><em>Q</em> es el conjunto de estados de la máquina</li>
+							<li><em>Σ</em> es el alfabeto del selector</li>
+							<li><em>Γ</em> es el alfabeto de la cinta</li>
+							<li><em>δ:Q &times; Γ&#8594;p( Q &times; Γ &times; {D,I} )</em> es la función de transición</li>
+							<li><em>q<sub>0</sub></em> es el estado inicial de la máquina</li>
+							<li><em>&beta;</em> es el símbolo blanco de la cinta</li>
+							<li><em>F</em> es el estado de parada de la máquina</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>MTD 🆚 MTND</h2>
+					</section>
+					<section>
+						<h3>Teorema</h3>
+						<p>
+							Todo lenguaje aceptado por una máquina de Turing no determinista puede ser aceptado por 
+							una máquina de Turing determinista.
+						</p>
+					</section>
+					<section>
+						<p>
+							Ha habido diversos intentos de encontrar otros modelos de maquinas u otros formalismos que sean mas 
+							poderosos que las MT, en el mismo sentido que las MT son mas poderosas que los AF y los AP. 
+							(Decimos que una tipo de maquina MA es mas poderoso que un tipo MB cuando el conjunto de lenguajes 
+							aceptados por alguna maquina en MB es un subconjunto propio de los aceptados por MA). 
+						</p>
+					</section>
+					<section>
+						<p>
+							Por ejemplo, 
+							independientemente de Turing, Emil Post propuso aun otro modelo de máquina abstracta, basada en 
+							la idea de un diagrama de flujo. También se han tratado de hacer “extensiones” a la MT, para 
+							hacerla mas poderosa. Por ejemplo, se propusieron MT no deterministas. Sin embargo, todos los 
+							intentos han sido infructuosos al encontrarse que dichas extensiones son equivalentes en poder de 
+							calculo a la MT original
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Funcionamiento 📑</h2>
+					</section>
+					<section>
+						<p>
+							En el caso de que exista al menos un par (estado, símbolo) con más de una posible combinación de actuaciones se dirá que se trata de una máquina de Turing no determinista.
+						</p>
+					</section>
+					<section>
+						</p>
+							¿Cómo sabe una máquina no determinista qué acción tomar de las varias posibles? 
+							Hay dos formas de verlo: una es decir que la máquina es "el mejor adivino posible", 
+							esto es, que siempre elige la transición que finalmente la llevará a un estado final de 
+							aceptación. La otra es imaginarse que la máquina se "clona", bifurcándose en varias copias, 
+							cada una de las cuales sigue una de las posibles transiciones
+						</p>
+					</section>
+					<section>
+						<img src="img/turing.gif" alt="GIF Turing"/>
+					</section>
+					<section>
+						</p>
+							La capacidad de cómputo de ambas versiones es equivalente; se puede demostrar que 
+							dada una máquina de Turing no determinista existe otra máquina de Turing determinista 
+							equivalente, en el sentido de que reconoce el mismo lenguaje, y viceversa. Mientras que 
+							una máquina determinista sigue un único "camino computacional", una máquina no determinista 
+							tiene un "árbol computacional". Si cualquiera de las ramas del árbol finaliza en un estado 
+							de aceptación, se dice que la máquina acepta la entrada.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Ejemplos de MTND</h2>
+						<img src="img/espera.gif" alt="Turing esperando"/>
+					</section>
+					<section>
+						<h5>MT que acepta el lenguaje L = {0<sup>n</sup>1<sup>n</sup> | n >= 1}. Idea: </h5>
+						<ul>
+							<li>Cambiar <strong>0</strong> por <strong>X</strong> y <strong>1</strong> por <strong>Y</strong> en una pasada</li>
+							<li>Repetir hasta el final de la cadena de entrada</li>
+							<li>Si hay <strong>X<sup>n</sup>Y<sup>n</sup></strong> la máquina acepta</li>
+							<li>Σ = {0,1}</li>
+							<li>Γ = {0,1,X,Y,B}</li>						
+						</ul>
+
+						<img src="img/mtnd1.png" alt="MTND1"/>
+					</section>
+					<section>
+						<p>Obtiene la inversa de una palabra en L = {0<sup>n</sup>1<sup>n</sup> | n >= 1</p>
+						<img src="img/mtnd2.JPG" alt="MTND2"/>
+					</section>
+					<section>
+						<p>Máquina que acepta el lenguaje de palíndromos sobre {0, 1}</p>
+						<img src="img/11.png" alt="MTND3"/>
+					</section>
+				</section>
+				<section>
+					
+					<h2>Referencias 📚</h2>
+					<ul>
+						<li><a href="https://es.slideshare.net/lluis31/maquina-de-turing-y-resolubilidad-e-irresolubilidad">Maquina de turing y resolubilidad e Irresolubilidad</a></li>
+						<li><a href="https://www.youtube.com/watch?v=NS-NQ5mCSs8">La máquina de Turing (explicada)</a></li>
+						<li><a href="https://www.youtube.com/watch?v=Ls-pBGz57uc">Máquina de Turing</a></li>
+						<li><a href="http://morphett.info/turing/turing.html">Turing machine simulator</a></li>
+						<li><a href="http://www.uhu.es/francisco.moreno/gii_mac/docs/Tema_4.pdf">Tema 4: Máquinas de Turing</a></li>
+						<li><a href="https://es.slideshare.net/PedroRoman10/automata-de-pila-y-maquina-de-turing-no-deterministas">Automata de Pila y Maquina de Turing No Deterministas</a></li>
+						<li><a href="https://giphy.com/">Giphy</a></li>
+						<li><a href="https://www.matesfacil.com/automatas-lenguajes/Maquina-Turing.html">Ejemplos de las MTND</a></li>
+					</ul>
+
+				</section>
+				<section>
+					<h1>Gracias por su atención 😁</h1>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				parallaxBackgroundImage: 'img/69259813-security-wallpapers.jpg',
+				parallaxBackgroundSize: '2100px 900px', 
+
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+
+		</script>
+	</body>
+</html>

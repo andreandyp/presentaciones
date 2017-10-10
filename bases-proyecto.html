@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Proyecto bases</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style type="text/css">
+			img{
+				width: inherit;
+				height: 200px;
+			}
+			#tabla{
+				width: inherit;
+				height: inherit;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>Equipo 6</h3>
+					<p>Brandon Ortiz López</p>
+					<p>Gisela Piña Escudero</p>
+					<p>André Michel Pozos Nieto</p>
+					<p>Alam Yael Rios Altamirano</p>
+					<br>
+					<p>México, Ciudad de México a 10 de marzo del 2017</p>
+				</section>
+				<section>
+					<section>
+						<h2>Proyecto</h2>
+						<p>Tienda de aplicaciones</p>	
+					</section>
+					<section>
+						<h3>Objetivo</h3>
+						<p>Diseñar un sistema en que se pueda realizar compra-descarga de aplicaciones en una plataforma web. </p>
+					</section>
+					<section>
+						<p>Se podrán registrar vendedores que suban versiones de sus aplicaciones, especificando en qué categoría de interés se encuentren, indicar costos, subir capturas del funcionamiento de sus aplicaciones, subir distintas versiones, marcar aplicaciones en desarrollo, entre otras funciones. </p>
+					</section>
+					<section>
+						<p>Para las aplicaciones aceptadas se pueden realizar muchas fichas de aplicaciones, esto para que los vendedores puedan manejar los idiomas en que presentan su aplicación.</p></section>
+					<section>
+						<p>También se tiene el usuario comprador. Este usuario generará un perfil, en el cual deberá indicar sus intereses-gustos para que le puedan ser recomendadas aplicaciones en un futuro, los cuales se irán analizando también respecto a sus descargas. Un comprador puede registrar distintas tarjetas de crédito para realizar los pagos dentro de la aplicación. </p>
+					</section>
+					<section>
+						<p>Se contará también con una lista de deseos en la cual los usuarios pueden añadir aplicaciones que les interesen para en un futuro identificarlas más rápido.</p>
+					</section>
+					<section>
+						<p>El último usuario sería el administrador del sistema, el cual estará encargado de mantener la integridad en la base de datos. El administrador estará encargado de autorizar a los vendedores subir aplicaciones.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Aspectos técnicos</h2>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>Gestor</th>
+									<th><em>Back-end</em></th>
+									<th><em>Front-end</em></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th><img src="img/bases-proyecto/mysql logo.png" alt="Logo MySQL"></th>
+									<th><img src="img/bases-proyecto/node logo.png" alt="Logo Node.js"></th>
+									<th><img src="img/bases-proyecto/html css js logo.png" alt="Logos HTML+CSS+JS"></th>
+								</tr>
+								<tr>
+									<th>MySQL</th>
+									<th>Node.js+Express</th>
+									<th>Javascript+CSS</th>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<a href="img/bases-proyecto/prototipo.svg">Ver tablas</a>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
