@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#42affa">
+	<title>Proyecto transversal de gestión</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!--Imprimir PDF-->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <style>
+        #encuesta{
+            width: 360px;
+            height: 197px;
+        }
+        #libro{
+            width: 432px;
+            height: 640px;
+        }
+    </style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+            <section>
+                <h1>Proyecto transversal</h1>
+                <p>André Michel Pozos Nieto</p>
+            </section>
+            <section>
+                <section>
+                    <h2>Noticia</h2>
+                    <p>Desde <a href="https://twitter.com/MomentsES">@MomentsES</a></p>
+                </section>
+                <section>
+                    <h4>Antetítulo</h4>
+                    <h3>Titulo</h3>
+                    <h4>Subtítulo</h4>
+                </section>
+                <section>
+                    <img src="" alt="Imagen de la nota">
+                </section>
+                <section>
+                    <h3>Fuente</h3>
+                    <a href="">Sitio de noticias</a>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Libro</h2>
+                    <p>Uno que no basta con leerlo</p>
+                </section>
+                <section>
+                    <h3>Curso de redacción para escritores y periodistas</h3>
+                    <p>Beatriz Escalante</p>
+                    <em>(Indispensable para estudiantes y correctores de estilo)</em>
+                </section>
+                <section>
+                    <ul>
+                        <li>"Vercion"</li>
+                        <li>"Lo que viene siendo"</li>
+                        <li>"Complemento a 1's"</li>
+                        <li>"Gentes"</li>
+                        <li>"Accesar"/"Inicializar"/"Indentar"</li>
+                        <li>"Necesitamos mas material"/"Hoy podemos entregarlo, más no mañana"</li>
+                    </ul>
+                </section>
+                <section>
+                    <img src="img/libro-redaccion.jpg" alt="Libro de redacción" id="libro">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Canción</h2>
+                    <p>Una competencia reñida</p>
+                </section>
+                <section>
+                    <h3>Limpio</h3>
+                    <h4>Laura Pausini y Kylie Minogue</h4>
+                    <img src="img/primera.png" alt="Primera encuesta de Instagram" id="encuesta">
+                    <img src="img/segunda.png" alt="Segunda encuesta de Instagram" id="encuesta">
+                    <p><small>La otra: Como ayer - Momo</small></p>
+                </section>
+                <section>
+                    <p>[...] Dejaré que sea el tiempo
+                    <br>Quien decida si eres para mí
+                    <br>Dejaré que el instinto me rescate
+                    <br>Y todo vuelva a ser limpio [...]</p>
+                    <img src="img/laura-kylie.jpg" alt="Video musical">
+                </section>
+                <section>
+                    <h3>Fuente</h3>
+                    <a href="https://www.youtube.com/watch?v=MWRm1qe2yRc">YouTube</a>
+                    <br>
+                    <a href="https://open.spotify.com/track/63XCn7awT8716CchqhOFy2?si=xGu6smssTGmVVOnUg7orgg">Spotify (Navegador)</a>
+                    <br>
+                    <a href="spotify:track:63XCn7awT8716CchqhOFy2">Spotify (App)</a>
+                </section>
+            </section>
+            <section>
+                <h2>Gracias por su atención 😁</h2>
+                <a href="https://andreandyp.github.io/">Mi página web</a>
+            </section>
+		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		Reveal.initialize({
+			history: true,
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>
